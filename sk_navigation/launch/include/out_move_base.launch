@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch> 
+ <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find sk_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find sk_navigation)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find sk_navigation)/params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find sk_navigation)/params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find sk_navigation)/params/move_base_params.yaml" command="load" />
+    <rosparam file="$(find sk_navigation)/params/base_local_planner_params.yaml" command="load" />
+    <!--<rosparam file="$(find sk_navigation)/config/dwa_local_planner.yaml" command="load" />
+    -->
+    <remap from="laser_scan_sensor" to="sk/laser/scan"/>
+    <remap from="cmd_vel" to="cmd_vel"/>
+    <remap from="odom" to="odom"/>
+    <remap from="scan" to="sk/laser/scan"/>
+    <param name="move_base/DWAPlannerROS/yaw_goal_tolerance" value="1.0"/>
+    <param name="move_base/DWAPlannerROS/xy_goal_tolerance" value="1.0"/>
+  </node>
+</launch>

@@ -1,0 +1,21 @@
+<launch>
+
+  <arg name="x" default="7"/>
+  <arg name="y" default="-7"/>
+  <arg name="z" default="0"/>
+  <arg name="roll" default="0"/>
+  <arg name="pitch" default="0"/>
+  <arg name="yaw" default="0"/>
+
+
+<include file="$(find gazebo_ros)/launch/willowgarage_world.launch"/>
+
+<!-- Spawn dd_robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros"
+        type="spawn_model" output="screen"
+        args="-file $(find sk)/urdf/model.urdf -urdf -model sk
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
+         
+        
+</launch>

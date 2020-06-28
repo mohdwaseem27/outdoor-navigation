@@ -1,0 +1,12 @@
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+  <param name="robot_description" textfile="$(find sk)/urdf/model.urdf"/>
+
+
+<!-- Spawn dd_robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros"
+        type="spawn_model" output="screen"
+        args="-file $(find sk)/urdf/model.urdf -urdf -model sk"/>
+         
+        
+</launch>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+ 
+  <rosparam command="load" file="$(find sk_navigation)/params/ekf_params.yaml" />
+  <rosparam command="load" file="$(find sk_navigation)/params/navsat_params_sim.yaml" />
+
+  <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se_odom" clear_params="true">
+    <remap from="/odometry/filtered" to="/odometry/filtered"/>
+    <remap from="/gps/fix" to="/sk/gps/fix"/>
+    <remap from="/imu/data" to="/sk/imu"/> 
+  </node>
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform" clear_params="true" >
+    <remap from="odometry/filtered" to="/odom"/>
+    <remap from="imu/data" to="/sk/imu"/> 
+    <remap from="gps/fix" to="/sk/gps/fix"/>
+  </node>
+
+
+</launch>
+

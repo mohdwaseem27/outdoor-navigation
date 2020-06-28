@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<launch>
+  <param name="/use_sim_time" value="true"/>
+  <arg name="model" />
+  <arg name="gui" default="False" />
+  <param name="robot_description" textfile="$(find sk)/urdf/model.urdf" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0"/>
+    <param name="tf_prefix" type="string" value=""/>
+    <remap from="joint_states" to="sk/joint_states" />
+  </node>
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find sk)/rviz/gps.rviz"/>
+  <!-- Map server -->
+  <arg name="map_file" default="$(find sk_navigation)/maps/empty.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!-- Place map frame at odometry frame -->
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="0 0 0 0 0 0 map odom 100"/>
+
+<include file="$(find sk_navigation)/launch/include/localization.launch"/>
+
+
+<include file="$(find sk_navigation)/launch/include/out_move_base.launch" />
+
+
+</launch>

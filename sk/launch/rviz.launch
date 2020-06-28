@@ -1,0 +1,13 @@
+<launch>
+  <arg name="model" />
+  <arg name="gui" default="False" />
+  <param name="robot_description" textfile="$(find sk)/urdf/model.urdf" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <node pkg="robot_state_publisher" type="state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0"/>
+    <param name="tf_prefix" type="string" value=""/>
+    <remap from="joint_states" to="sk/joint_states" />
+  </node>
+  <node name="rviz" pkg="rviz" type="rviz"
+        args="-d $(find sk)/rviz/urdf.rviz"/>
+</launch>
