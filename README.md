@@ -5,7 +5,7 @@
 
 `roslaunch sk bringup.launch`
 
-## to bring up the model in gazebo 
+## to bring up the model with willowgarage in gazebo 
 
 `roslaunch sk sk.launch`
 
