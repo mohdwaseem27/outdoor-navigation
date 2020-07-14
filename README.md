@@ -16,4 +16,10 @@
 `roslaunch sk_navigation gps_nav.launch`
 
 
+After launching gps_nav, we can now give the goal globally using 2D Nav Goal from rviz
+
+![rviz](/home/waseem/pic.png)
+
+Robot reaches the goal by avoiding obstacles
+
 
