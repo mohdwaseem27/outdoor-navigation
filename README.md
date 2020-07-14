@@ -3,7 +3,7 @@
 ## to bring up the model in gazebo 
 
 
-# `roslaunch sk bringup.launch`
+### `roslaunch sk bringup.launch`
 
 This will bringup the robot model with empty gazebo world, obstacles can be placed in between to check for the obstacle avoiding and path planning algorithm.
 
