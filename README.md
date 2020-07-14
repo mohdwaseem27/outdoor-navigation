@@ -18,7 +18,7 @@
 
 After launching gps_nav, we can now give the goal globally using 2D Nav Goal from rviz
 
-![rviz](/home/waseem//Pictures/pic.png)
+![rviz](/outdoor_navigation/docs/pic.png)
 
 Robot reaches the goal by avoiding obstacles
 
