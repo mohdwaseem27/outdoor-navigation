@@ -5,9 +5,17 @@
 
 `roslaunch sk bringup.launch`
 
+This will bringup the robot model with empty gazebo world, obstacles can be placed in between to check for the obstacle avoiding and path planning algorithm.
+
+
 ## to bring up the model with willowgarage in gazebo 
 
 `roslaunch sk sk.launch`
+
+This will bringup the robot model with willowgarage world, robot will navigate through the willowgarage according to the goal given from rviz and plan the plan the path accordingly
+
+![gazebo](https://github.com/mohdwaseem27/outdoor-navigation/blob/master/docs/pic2.png) 
+
 
 
 ## for out door autonomous navigation
@@ -20,6 +28,7 @@ After launching gps_nav, we can now give the goal globally using 2D Nav Goal fro
 
 ![rviz](https://github.com/mohdwaseem27/outdoor-navigation/blob/master/docs/pic.png)
 
-Robot reaches the goal by avoiding obstacles
+Robot reaches the goal by avoiding obstacles.
+robot is navigated without any preloaded map.
 
 
