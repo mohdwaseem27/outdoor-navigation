@@ -26,6 +26,8 @@ This will bringup the robot model with willowgarage world, robot will navigate t
 
 After launching gps_nav, we can now give the goal globally using 2D Nav Goal from rviz
 
+Below image shows the navigation in an empty world
+
 ![rviz](https://github.com/mohdwaseem27/outdoor-navigation/blob/master/docs/pic.png)
 
 Robot reaches the goal by avoiding obstacles.
