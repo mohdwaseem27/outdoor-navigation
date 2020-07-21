@@ -42,7 +42,7 @@ robot is navigated without any preloaded map.
 The waypoints are given by the file, the robot will navigate to the goal by the gps coordinates given in the file.
 
 
-######## Thanks [https://github.com/ArghyaChatterjee] for creating waypoints
+Thanks [https://github.com/ArghyaChatterjee] for creating waypoints
 
 
 
