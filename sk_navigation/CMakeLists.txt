@@ -11,6 +11,11 @@ find_package(catkin REQUIRED
   actionlib
   move_base_msgs
   roscpp
+  rospy
+  std_msgs
+  tf
+  roslib
+  roslaunch
 )
 
 ## System dependencies are found with CMake's conventions
@@ -196,7 +201,8 @@ include_directories(
 ## Testing ##
 #############
 
-
+add_executable(gps_waypoint src/gps_waypoint.cpp)
+target_link_libraries(gps_waypoint ${catkin_LIBRARIES})
 
 ## Add gtest based cpp test target and link libraries
 # catkin_add_gtest(${PROJECT_NAME}-test test/test_sk_navigation.cpp)
