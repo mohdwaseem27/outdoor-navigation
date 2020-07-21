@@ -18,7 +18,7 @@ This will bringup the robot model with willowgarage world, robot will navigate t
 
 
 
-## for out door autonomous navigation
+## for out-door autonomous navigation
 
 
 ##### `roslaunch sk_navigation gps_nav.launch`
@@ -33,5 +33,16 @@ Below image shows the navigation in an empty world with some obstacles.
 Robot reaches the goal by avoiding obstacles.
 
 robot is navigated without any preloaded map.
+
+
+## For navigation using waypoints
+
+##### `roslaunch sk_navigation send_goals.launch`
+
+The waypoints are given by the file, the robot will navigate to the goal by the gps coordinates given in the file.
+
+
+######## Thanks [https://github.com/ArghyaChatterjee] for creating waypoints
+
 
 
