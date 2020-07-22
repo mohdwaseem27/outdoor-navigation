@@ -12,7 +12,7 @@ This will bringup the robot model with empty gazebo world, obstacles can be plac
 
 ##### `roslaunch sk sk.launch`
 
-This will bringup the robot model with willowgarage world, robot will navigate through the willowgarage according to the goal given from rviz and plan the plan the path accordingly
+This will bringup the robot model with willowgarage world, robot will navigate through the willowgarage according to the goal given from rviz and plan the path accordingly
 
 ![gazebo](https://github.com/mohdwaseem27/outdoor-navigation/blob/master/docs/pic0.png) 
 
